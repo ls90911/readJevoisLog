@@ -1,0 +1,12 @@
+clear
+clear global
+close all
+clc
+
+global RANSAC
+
+[RANSAC] = import_ransac_data();
+
+
+
+temp = 1;
