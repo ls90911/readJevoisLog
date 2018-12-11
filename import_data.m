@@ -45,6 +45,8 @@ OB.VY_OT = data(:,42);
 OB.VX_FILTERED = data(:,43);
 OB.VY_FILTERED = data(:,44);
 
+OB.GATE_AREA = data(:,45);
+
 
 OB.TIME = data(:,1);
 t0 = OB.TIME(1);
@@ -54,7 +56,7 @@ for i = 1:length(OB.TIME)
     OB.TIME(i) =  (OB.TIME(i)-t0)/1000.0;
 end
 
-psi = -24/180*pi;
+psi = -32.5/180*pi;
 rot_mat = [cos(psi) sin(psi);
     -sin(psi) cos(psi)];
 for i = 1:length(OB.TIME)
@@ -72,6 +74,7 @@ for i = 1:length(OB.TIME)
         OB.DETEC_X_LOCAL_OT(p) = OB.X_OT(i)-first_gate_position(1);
         OB.DETEC_Y_LOCAL_OT(p) = OB.Y_OT(i)-first_gate_position(2);
         OB.DETEC_PSI_LOCAL(p) = OB.PSI(i);
+        OB.GATE_AREA_LOCAL(p) = OB.GATE_AREA(i);
         p = p+1;
     end
 end

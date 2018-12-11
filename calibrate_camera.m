@@ -16,15 +16,14 @@ for i = 1:length(OB.DETEC_TIME_LOCAL)
     
 end
 
-% p_x = polyfit(OB.DETEC_X_LOCAL',local_detection_error_x,1);
-% fitted_x = polyval(p_x,OB.DETEC_X_LOCAL);
+ p_x = polyfit(OB.DETEC_X_LOCAL',local_detection_error_x,2);
+ fitted_x = polyval(p_x,OB.DETEC_X_LOCAL);
 % p_y = polyfit(OB.DETEC_X_LOCAL',local_detection_error_y,1);
 % fitted_y = polyval(p_y,OB.DETEC_X_LOCAL);
 
 X = [ones(length(OB.DETEC_TIME_LOCAL),1) OB.DETEC_X_LOCAL' OB.DETEC_Y_LOCAL' OB.DETEC_X_LOCAL'.*OB.DETEC_Y_LOCAL'];
-Y = [ones(length(OB.DETEC_TIME_LOCAL),1) OB.DETEC_X_LOCAL' OB.DETEC_Y_LOCAL' ...
-    OB.DETEC_X_LOCAL'.*OB.DETEC_Y_LOCAL' OB.DETEC_PSI_LOCAL'];
-p_x = regress(local_detection_error_x,X);
+Y = [ones(length(OB.DETEC_TIME_LOCAL),1) OB.DETEC_X_LOCAL' OB.DETEC_Y_LOCAL'];
+%p_x = regress(local_detection_error_x,X);
 p_y = regress(local_detection_error_y,Y);
 % compensate detection with model error
 compensate_x = zeros(length(OB.DETEC_TIME_LOCAL),1);
@@ -32,20 +31,19 @@ compensate_y = zeros(length(OB.DETEC_TIME_LOCAL),1);
 
 
 for i = 1:length(OB.DETEC_TIME_LOCAL)
-%     compensate_x(i) = OB.DETEC_X_LOCAL(i) + (OB.DETEC_X_LOCAL(i)*p_x(1)+p_x(2));
+     compensate_x(i) = OB.DETEC_X_LOCAL(i) + (OB.DETEC_X_LOCAL(i)^2*p_x(1)+p_x(2)*OB.DETEC_X_LOCAL(i)+p_x(3));
 %     compensate_y(i) = OB.DETEC_Y_LOCAL(i) + (OB.DETEC_X_LOCAL(i)*p_y(1)+p_y(2));
 
-    compensate_x(i) = OB.DETEC_X_LOCAL(i) + p_x(1)+p_x(2)*OB.DETEC_X_LOCAL(i)+p_x(3)*OB.DETEC_Y_LOCAL(i)+...
-    p_x(4)*OB.DETEC_X_LOCAL(i)*OB.DETEC_Y_LOCAL(i);
-    compensate_y(i) = OB.DETEC_Y_LOCAL(i) + p_y(1)+p_y(2)*OB.DETEC_X_LOCAL(i)+p_y(3)*OB.DETEC_Y_LOCAL(i)+...
-    p_y(4)*OB.DETEC_X_LOCAL(i)*OB.DETEC_Y_LOCAL(i) + p_y(5)*OB.DETEC_PSI_LOCAL(i);
+%     compensate_x(i) = OB.DETEC_X_LOCAL(i) + p_x(1)+p_x(2)*OB.DETEC_X_LOCAL(i)+p_x(3)*OB.DETEC_Y_LOCAL(i)+...
+%     p_x(4)*OB.DETEC_X_LOCAL(i)*OB.DETEC_Y_LOCAL(i);
+    compensate_y(i) = OB.DETEC_Y_LOCAL(i) + p_y(1)+p_y(2)*OB.DETEC_X_LOCAL(i)+p_y(3)*OB.DETEC_Y_LOCAL(i);
 end
 
 figure(plot_num)
 subplot(4,1,1)
 hold on
 plot(OB.DETEC_X_LOCAL,local_detection_error_x,'.');
-%plot(OB.DETEC_X_LOCAL,fitted_x);
+plot(OB.DETEC_X_LOCAL,fitted_x);
 legend('detection error','fitted model');
 xlabel('detection x [m]');
 ylabel('detection error x [m]');

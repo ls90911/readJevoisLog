@@ -6,14 +6,16 @@ global OB
 
 plot_trajectory_vs_time(4)
 
- plot_detection_local_frame(1);
+% plot_detection_local_frame(1);
 % 
 % plot_detection_earth_frame(2);
 
 %plot_detect_error(1)
 
-%plot_velocity(1)
-calibrate_camera(2);
+plot_velocity(6)
+%calibrate_camera(2);
 %plot_3d_trajectory(3);
+plot_command(1)
+%Rcalibrate_camera_NN(1)
 end
 
