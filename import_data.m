@@ -47,6 +47,10 @@ OB.VY_FILTERED = data(:,44);
 
 OB.GATE_AREA = data(:,45);
 
+OB.RANSAC_X = data(:,46);
+OB.RANSAC_Y = data(:,47);
+OB.RANSAC_VX = data(:,48);
+OB.RANSAC_VY = data(:,49);
 
 OB.TIME = data(:,1);
 t0 = OB.TIME(1);
