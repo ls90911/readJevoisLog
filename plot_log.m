@@ -5,7 +5,7 @@ global OB
 %plot_communication(6)
 debug_ransac_pos(1)
 debug_ransac_vel(3)
-%plot_trajectory_vs_time(6)
+plot_trajectory_vs_time(6)
 
 % plot_detection_local_frame(1);
 % 
