@@ -1,6 +1,6 @@
 function [] = analysis_ransac_file(file_id)
 global RANSAC
-figure(1)
+figure(100)
 subplot(2,1,1)
 hold on
 plot(RANSAC{file_id}.TIME,RANSAC{file_id}.X_PRE);
@@ -18,7 +18,7 @@ legend('prediction','measurement','estimation');
 ylabel('y[m]')
 xlabel('time[s]')
 
-figure(2)
+figure(101)
 subplot(2,1,1)
 hold on
 plot(RANSAC{file_id+1}.TIME,RANSAC{file_id+1}.X_PRE);

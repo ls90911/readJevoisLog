@@ -1,8 +1,8 @@
 function [] = debug_ransac_pos(plot_num)
 global OB m n
 
-m1 = 1;
-n1 = 700;
+m1 = 240;
+n1 = 282;
 figure(plot_num)
 subplot(2,1,1)
 hold on
