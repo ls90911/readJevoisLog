@@ -3,8 +3,9 @@ global OB
 
 %plot_3D_trajectory(3);
 %plot_communication(6)
-
-plot_trajectory_vs_time(4)
+debug_ransac_pos(1)
+debug_ransac_vel(3)
+%plot_trajectory_vs_time(6)
 
 % plot_detection_local_frame(1);
 % 
@@ -12,10 +13,10 @@ plot_trajectory_vs_time(4)
 
 %plot_detect_error(1)
 
-plot_velocity(6)
+%plot_velocity(6)
 %calibrate_camera(2);
 %plot_3d_trajectory(3);
-plot_command(1)
+%plot_command(1)
 %Rcalibrate_camera_NN(1)
 end
 
