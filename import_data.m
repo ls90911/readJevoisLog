@@ -51,6 +51,8 @@ OB.RANSAC_X = data(:,46);
 OB.RANSAC_Y = data(:,47);
 OB.RANSAC_VX = data(:,48);
 OB.RANSAC_VY = data(:,49);
+OB.DETECTION_STAMP = data(:,50);
+
 
 OB.TIME = data(:,1);
 t0 = OB.TIME(1);
@@ -91,6 +93,7 @@ for i = 1:length(OB.TIME)
         OB.DETEC_X_OT(p) = OB.X_OT(i);
         OB.DETEC_Y_E(p) = OB.DETECT_Y_E(i);
         OB.DETEC_Y_OT(p) = OB.Y_OT(i);
+        OB.DETEC_STAMP(p) = OB.DETECTION_STAMP(i);
         p = p+1;
     end
 end
