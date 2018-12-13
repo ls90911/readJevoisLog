@@ -1,5 +1,5 @@
 function [] = import_data(file_name)
-global OB
+global OB t0
 %------------------------------------------
 first_gate_position = [4,0];
 %------------------------------------------

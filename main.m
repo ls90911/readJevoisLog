@@ -5,23 +5,21 @@ clear global
 
 global m n OB RANSAC
 %--------------------------------------
-file_name = '7348.csv';  % 7224
+file_name = '7685.csv';  % 7224
 %--------------------------------------
 import_data(file_name);
 [RANSAC] = import_ransac_data();
 
 
-m = 1;
-n = length(OB.TIME);
+% m = 1;
+% n = length(OB.TIME);
 
- m = 3652;
- n = 3852;
+ m = 2402;
+ n = 3102;
 
 
 plot_log();
 
-temp = 1;
-
-analysis_ransac_file(340)
+analysis_ransac_file(72)
 
 temp = 1;
