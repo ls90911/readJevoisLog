@@ -88,7 +88,8 @@ end
 p = 1;
 for i = 1:length(OB.TIME)
     if OB.DETECT_X_E(i) ~= 0 && OB.DETECT_X_E(i) ~= OB.DETECT_X_E(i-1)
-        OB.DETEC_TIME_E(p) = OB.TIME(i);
+        %OB.DETEC_TIME_E(p) = OB.TIME(i);
+        OB.DETEC_TIME_E(p) = (OB.DETECTION_STAMP(i)-t0)/1000;
         OB.DETEC_X_E(p) = OB.DETECT_X_E(i);
         OB.DETEC_X_OT(p) = OB.X_OT(i);
         OB.DETEC_Y_E(p) = OB.DETECT_Y_E(i);

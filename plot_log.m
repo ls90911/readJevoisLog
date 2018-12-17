@@ -14,7 +14,7 @@ debug_ransac_vel(4)
 %plot_detect_error(1)
 
 %plot_velocity(6)
-%calibrate_camera(2);
+calibrate_camera(8);
 %plot_3d_trajectory(3);
 %plot_command(1)
 %Rcalibrate_camera_NN(1)

@@ -1,8 +1,8 @@
 function [] = debug_ransac_pos(plot_num)
 global OB m n
 
-FLAG_PART_PLOT = 1;
-FLAG_LABEL_DATA = 1;
+FLAG_PART_PLOT = 0;
+FLAG_LABEL_DATA = 0;
 
 if FLAG_PART_PLOT
     m1 = 149;
