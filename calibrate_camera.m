@@ -51,7 +51,7 @@ ylabel('detection error x [m]');
 subplot(4,1,2)
 hold on
 plot(OB.DETEC_X_LOCAL,local_detection_error_y,'.');
-plot(OB.DETEC_Y_LOCAL,fitted_y);
+plot(OB.DETEC_X_LOCAL,fitted_y);
 legend('detection error','fitted model');
 xlabel('detection x [m]');
 ylabel('detection error y [m]');

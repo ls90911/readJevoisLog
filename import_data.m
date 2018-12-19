@@ -53,6 +53,10 @@ OB.RANSAC_VX = data(:,48);
 OB.RANSAC_VY = data(:,49);
 OB.DETECTION_STAMP = data(:,50);
 
+OB.P_TERM_X = data(:,51);
+OB.D_TERM_X = data(:,52);
+OB.P_TERM_Y = data(:,53);
+OB.D_TERM_Y = data(:,54);
 
 OB.TIME = data(:,1);
 t0 = OB.TIME(1);

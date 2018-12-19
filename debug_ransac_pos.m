@@ -50,27 +50,30 @@ if FLAG_LABEL_DATA
         text(OB.DETEC_TIME_E(i),OB.DETEC_Y_E(i),label);
     end
 end
+xx = [OB.TIME(m) OB.TIME(n)];
+yy = [0 0];
+plot(xx,yy,'k');
 ylabel('y [m]')
 xlabel('time [s]')
 
-figure(plot_num+1)
-subplot(2,1,1)
-hold on
-plot(OB.TIME(m:n),OB.RANSAC_X(m:n))
-plot(OB.TIME(m:n),OB.RANSAC_VX(m:n))
-legend('ransac_x','ransac_vx')
-grid on
-subplot(2,1,2)
-hold on
-plot(OB.TIME(m:n),OB.RANSAC_Y(m:n))
-plot(OB.TIME(m:n),OB.RANSAC_VY(m:n))
-legend('ransac_y','ransac_vy')
-grid on
-
-figure(plot_num+2)
-plot(OB.DETEC_TIME_E(m1:n1),OB.DETEC_STAMP(m1:n1),'.')
-xlabel('time [s]')
-ylabel('time stamp')
+% figure(plot_num+1)
+% subplot(2,1,1)
+% hold on
+% plot(OB.TIME(m:n),OB.RANSAC_X(m:n))
+% plot(OB.TIME(m:n),OB.RANSAC_VX(m:n))
+% legend('ransac_x','ransac_vx')
+% grid on
+% subplot(2,1,2)
+% hold on
+% plot(OB.TIME(m:n),OB.RANSAC_Y(m:n))
+% plot(OB.TIME(m:n),OB.RANSAC_VY(m:n))
+% legend('ransac_y','ransac_vy')
+% grid on
+% 
+% figure(plot_num+2)
+% plot(OB.DETEC_TIME_E(m1:n1),OB.DETEC_STAMP(m1:n1),'.')
+% xlabel('time [s]')
+% ylabel('time stamp')
 grid on
 
 end
