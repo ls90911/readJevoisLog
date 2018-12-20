@@ -5,7 +5,7 @@ clear global
 
 global m n OB RANSAC
 %--------------------------------------
-file_name = '8090.csv';  % 8199
+file_name = '7922.csv';  % 8199
 %--------------------------------------
 import_data(file_name);
 [RANSAC] = import_ransac_data();

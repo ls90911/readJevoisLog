@@ -6,12 +6,14 @@ subplot(2,1,1)
 hold on
 plot(OB.TIME,OB.VX_OT);
 plot(OB.TIME,OB.VX_FILTERED);
-xlabel('vx [m/s]')
+legend('OT','Estimated')
+ylabel('vx [m/s]')
 subplot(2,1,2)
 hold on
 plot(OB.TIME,OB.VY_OT);
 plot(OB.TIME,OB.VY_FILTERED);
-xlabel('vy [m/s]')
+ylabel('vy [m/s]')
+xlabel('time[s]')
 
 
 end

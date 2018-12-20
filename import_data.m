@@ -73,6 +73,9 @@ for i = 1:length(OB.TIME)
    pos_OT = rot_mat*[OB.X_OT(i) OB.Y_OT(i)]'; 
    OB.X_OT(i) = pos_OT(1);
    OB.Y_OT(i) = pos_OT(2);
+   vel_OT = rot_mat*[OB.VX_OT(i) OB.VY_OT(i)]';
+   OB.VX_OT(i) = vel_OT(1);
+   OB.VY_OT(i) = vel_OT(2);
 end
 
 for i = 1:length(OB.TIME)    
