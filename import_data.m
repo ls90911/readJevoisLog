@@ -58,6 +58,9 @@ OB.D_TERM_X = data(:,52);
 OB.P_TERM_Y = data(:,53);
 OB.D_TERM_Y = data(:,54);
 
+OB.VX_CMD = data(:,55);
+OB.VY_CMD = data(:,56);
+
 OB.TIME = data(:,1);
 t0 = OB.TIME(1);
 p = 1;
