@@ -1,0 +1,29 @@
+function [] = plot_gate(gate_position,length,fig_num,color,lineStyle)
+x = gate_position(1);
+y = gate_position(2);
+z = gate_position(3);
+heading = gate_position(4);
+
+if heading == 0
+   corners = [x y-length/2 z+length/2;...
+       x y+length/2 z+length/2;...
+       x y+length/2 z-length/2;...
+       x y-length/2 z-length/2; ...
+       x y-length/2 z+length/2];
+   
+
+elseif heading == pi/2
+    corners = [x+length/2 y z+length/2;...
+        x-length/2 y z+length/2;...
+        x-length/2 y z-length/2;...
+        x+length/2 y z-length/2;...
+        x+length/2 y z+length/2];
+end
+bar = [x y z-length/2;...
+          x y 0];
+figure(fig_num)
+hold on
+plot3(corners(:,1),corners(:,2),corners(:,3),'Color',color,'LineWidth',2,'LineStyle',lineStyle);
+plot3(bar(:,1),bar(:,2),bar(:,3),'Color',color,'LineWidth',3,'LineStyle',lineStyle)
+
+end
