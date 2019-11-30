@@ -5,8 +5,9 @@ global OB
 %plot_communication(6)
 %plot_optitrack(8)
 debug_ransac_pos(1)
-%plot_attitude(2)
-debug_ransac_vel(4)
+plot_attitude(2)
+plot_gate_number(3);
+%debug_ransac_vel(4)
 
 %plot_estimation_in_3D(5);
 %plot_trajectory_vs_time(6)
